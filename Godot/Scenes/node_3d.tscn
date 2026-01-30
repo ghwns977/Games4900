@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dxalkejcst138"]
+
+[ext_resource type="PackedScene" uid="uid://dwb886k7nh5s" path="res://Building_Comm/building-skyscraper-a.fbx" id="1_r3fl7"]
+[ext_resource type="PackedScene" uid="uid://n1xrwdaklenu" path="res://Building_Comm/building-a.fbx" id="2_jka67"]
+[ext_resource type="PackedScene" uid="uid://cb344oqpf2r3j" path="res://Building_Comm/building-b.fbx" id="3_i5arm"]
+[ext_resource type="PackedScene" uid="uid://dt2og1iv0sl1b" path="res://Building_Comm/building-c.fbx" id="4_wc5p8"]
+[ext_resource type="PackedScene" uid="uid://c1ox2cx1kymae" path="res://Cars/police.fbx" id="5_t3l2h"]
+[ext_resource type="PackedScene" uid="uid://dj1h3k1si0gbu" path="res://Scenes/Activator.tscn" id="6_ifh66"]
+[ext_resource type="PackedScene" uid="uid://cpggmaaqbaqv5" path="res://Scenes/greater.tscn" id="7_aeo3b"]
+
+[node name="Node3D" type="Node3D" unique_id=417984978]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=66355645]
+transform = Transform3D(-0.99811023, 0, 0.06144933, 0, 1, 0, -0.06144933, 0, -0.99811023, 0.19782507, 1.3366401, -2.4564228)
+
+[node name="building-skyscraper-a" parent="." unique_id=1368531897 instance=ExtResource("1_r3fl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007423997, 0, 12.831902)
+
+[node name="building-a" parent="building-skyscraper-a" unique_id=628077522 instance=ExtResource("2_jka67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059467077, 0, -10.768641)
+
+[node name="building-b" parent="building-skyscraper-a" unique_id=804077058 instance=ExtResource("3_i5arm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0207268, 0, -10.745863)
+
+[node name="building-c" parent="building-skyscraper-a" unique_id=131720312 instance=ExtResource("4_wc5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0556954, 0, -10.944498)
+
+[node name="police" parent="building-skyscraper-a/building-c" unique_id=1477394184 instance=ExtResource("5_t3l2h")]
+transform = Transform3D(-0.1317694, 0, -0.15045537, 0, 0.19999999, 0, 0.15045537, 0, -0.1317694, -0.18681657, 0, -1.3717556)
+
+[node name="Activator" parent="." unique_id=2102403275 node_paths=PackedStringArray("HelloComponent") instance=ExtResource("6_ifh66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2939134, -0.24070215, 3.0937235)
+HelloComponent = NodePath("../Greater")
+
+[node name="Greater" parent="." unique_id=1155667492 instance=ExtResource("7_aeo3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17911005, 0, 6.122009)
