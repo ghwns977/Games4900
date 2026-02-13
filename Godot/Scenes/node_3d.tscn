@@ -15,11 +15,33 @@
 [ext_resource type="PackedScene" uid="uid://b25pmqslpomcd" path="res://Building_Indust/building-m.fbx" id="13_8cye3"]
 [ext_resource type="PackedScene" uid="uid://dfmllc01tae6m" path="res://Building_Indust/building-n.fbx" id="14_062e5"]
 [ext_resource type="PackedScene" uid="uid://cslxy2uk8v2l3" path="res://Building_Indust/building-k.fbx" id="15_m2rse"]
+[ext_resource type="PackedScene" uid="uid://cx8o0nh6fmdqw" path="res://Controller/proto_controller.tscn" id="16_062e5"]
+[ext_resource type="PackedScene" uid="uid://dssdit3bmesh1" path="res://Scenes/pressure_plate.tscn" id="18_rl1jb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rl1jb"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_58eop"]
+sky_material = SubResource("ProceduralSkyMaterial_rl1jb")
+
+[sub_resource type="Environment" id="Environment_nivdu"]
+background_mode = 2
+sky = SubResource("Sky_58eop")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=417984978]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=66355645]
-transform = Transform3D(-0.99811023, 0, 0.06144933, 0, 1, 0, -0.06144933, 0, -0.99811023, 0.19782507, 1.3366401, -2.4564228)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=631533240]
+environment = SubResource("Environment_nivdu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2084201601]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ProtoController" parent="." unique_id=1732880171 instance=ExtResource("16_062e5")]
+transform = Transform3D(-0.99853295, 0, 0.054148495, 0, 1, 0, -0.054148495, 0, -0.99853295, 0.22710896, 0.30204892, -3.588181)
 
 [node name="building-skyscraper-a" parent="." unique_id=1368531897 instance=ExtResource("1_r3fl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022082925, -0.005700588, 12.843458)
@@ -72,3 +94,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0265484, 0, -0.798316)
 
 [node name="building-k" parent="building-m" unique_id=174860806 instance=ExtResource("15_m2rse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.620358, 0, -0.38192654)
+
+[node name="Floor" type="Node3D" parent="." unique_id=1141636934]
+
+[node name="pressure_plate" parent="." unique_id=1113003053 instance=ExtResource("18_rl1jb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42229664, 4.7683716e-07, -3.6617615)

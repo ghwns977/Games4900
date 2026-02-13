@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://jk2jh76ecf2w"]
+
+[node name="Floor" type="Node3D" unique_id=39909004]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=708729498]
