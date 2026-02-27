@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cb344oqpf2r3j" path="res://Building_Comm/building-b.fbx" id="3_i5arm"]
 [ext_resource type="PackedScene" uid="uid://dt2og1iv0sl1b" path="res://Building_Comm/building-c.fbx" id="4_wc5p8"]
 [ext_resource type="PackedScene" uid="uid://c1ox2cx1kymae" path="res://Cars/police.fbx" id="5_t3l2h"]
-[ext_resource type="PackedScene" uid="uid://dj1h3k1si0gbu" path="res://Scenes/Activator.tscn" id="6_ifh66"]
-[ext_resource type="PackedScene" uid="uid://cpggmaaqbaqv5" path="res://Scenes/greater.tscn" id="7_aeo3b"]
 [ext_resource type="PackedScene" uid="uid://dlimbocfsme56" path="res://Building_Comm/building-d.fbx" id="8_vudi7"]
 [ext_resource type="PackedScene" uid="uid://c5rcem7ft50ly" path="res://Building_Comm/building-e.fbx" id="9_1vwyg"]
 [ext_resource type="PackedScene" uid="uid://c8trvtl23hx8o" path="res://Cars/firetruck.fbx" id="10_ahc04"]
@@ -14,12 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dec1o4rvf5ewm" path="res://Cars/ambulance.fbx" id="12_062e5"]
 [ext_resource type="PackedScene" uid="uid://b25pmqslpomcd" path="res://Building_Indust/building-m.fbx" id="13_8cye3"]
 [ext_resource type="PackedScene" uid="uid://dfmllc01tae6m" path="res://Building_Indust/building-n.fbx" id="14_062e5"]
+[ext_resource type="PackedScene" uid="uid://dcoldbgso201k" path="res://Scenes/Coin.tscn" id="15_8cye3"]
 [ext_resource type="PackedScene" uid="uid://cslxy2uk8v2l3" path="res://Building_Indust/building-k.fbx" id="15_m2rse"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://Controller/proto_controller.tscn" id="16_062e5"]
 
 [node name="Node3D" type="Node3D" unique_id=417984978]
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=66355645]
-transform = Transform3D(-0.99811023, 0, 0.06144933, 0, 1, 0, -0.06144933, 0, -0.99811023, 0.19782507, 1.3366401, -2.4564228)
 
 [node name="building-skyscraper-a" parent="." unique_id=1368531897 instance=ExtResource("1_r3fl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022082925, -0.005700588, 12.843458)
@@ -35,13 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0556954, 0, -10.944498)
 
 [node name="police" parent="building-skyscraper-a/building-c" unique_id=1477394184 instance=ExtResource("5_t3l2h")]
 transform = Transform3D(-0.1317694, 0, -0.15045537, 0, 0.19999999, 0, 0.15045537, 0, -0.1317694, -0.18681657, 0, -1.3717556)
-
-[node name="Activator" parent="." unique_id=2102403275 node_paths=PackedStringArray("HelloComponent") instance=ExtResource("6_ifh66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2939134, -0.24070215, 3.0937235)
-HelloComponent = NodePath("../Greater")
-
-[node name="Greater" parent="." unique_id=1155667492 instance=ExtResource("7_aeo3b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17911005, 0, 6.122009)
 
 [node name="building-d" parent="." unique_id=1584062798 instance=ExtResource("8_vudi7")]
 transform = Transform3D(0.80074185, 0, -0.59900963, 0, 1, 0, 0.59900963, 0, 0.80074185, -3.5302575, 0, 4.747962)
@@ -72,3 +62,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0265484, 0, -0.798316)
 
 [node name="building-k" parent="building-m" unique_id=174860806 instance=ExtResource("15_m2rse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.620358, 0, -0.38192654)
+
+[node name="ProtoController" parent="." unique_id=1603152050 instance=ExtResource("16_062e5")]
+transform = Transform3D(0.0706536, 0, 0, 0, 0.0706536, 0, 0, 0, 0.0706536, 0.105407, 0.027277157, -2.0613766)
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=411077436]
+transform = Transform3D(44.729042, 0, 0, 0, 1, 0, 0, 0, 70.4294, 0, -0.5173848, 0)
+use_collision = true
+
+[node name="Coin" parent="." unique_id=183228460 instance=ExtResource("15_8cye3")]
+transform = Transform3D(1, 0, 0, 0, -0.14925922, -0.9887981, 0, 0.9887981, -0.14925922, 0.09745658, 1.1176978, -8.7596)

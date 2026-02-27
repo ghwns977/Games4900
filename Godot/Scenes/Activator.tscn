@@ -2,6 +2,5 @@
 
 [ext_resource type="Script" uid="uid://dpqaao13lq0rc" path="res://Scenes/activator.gd" id="1_cibah"]
 
-[node name="Activator" type="Node3D" unique_id=2102403275 node_paths=PackedStringArray("HelloComponent")]
+[node name="Activator" type="Node3D" unique_id=2102403275]
 script = ExtResource("1_cibah")
-HelloComponent = NodePath("")

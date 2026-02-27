@@ -2,8 +2,8 @@ extends Node3D
 
 class_name Greater
 
-func SayHello():
+# func SayHello():
 	
-	return("Hello")
+	# return("Hello")
 	
 	
