@@ -16,7 +16,27 @@
 [ext_resource type="PackedScene" uid="uid://cslxy2uk8v2l3" path="res://Building_Indust/building-k.fbx" id="15_m2rse"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://Controller/proto_controller.tscn" id="16_062e5"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8cye3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_062e5"]
+sky_material = SubResource("ProceduralSkyMaterial_8cye3")
+
+[sub_resource type="Environment" id="Environment_m2rse"]
+background_mode = 2
+sky = SubResource("Sky_062e5")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Node3D" type="Node3D" unique_id=417984978]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=391674539]
+environment = SubResource("Environment_m2rse")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1304718542]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="building-skyscraper-a" parent="." unique_id=1368531897 instance=ExtResource("1_r3fl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022082925, -0.005700588, 12.843458)
@@ -71,4 +91,4 @@ transform = Transform3D(44.729042, 0, 0, 0, 1, 0, 0, 0, 70.4294, 0, -0.5173848, 
 use_collision = true
 
 [node name="Coin" parent="." unique_id=183228460 instance=ExtResource("15_8cye3")]
-transform = Transform3D(1, 0, 0, 0, -0.14925922, -0.9887981, 0, 0.9887981, -0.14925922, 0.09745658, 1.1176978, -8.7596)
+transform = Transform3D(1, 0, 0, 0, -0.14925922, -0.9887981, 0, 0.9887981, -0.14925922, 0.09048093, 1.0441753, -9.70656)
