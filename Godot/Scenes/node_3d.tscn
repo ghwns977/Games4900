@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dfmllc01tae6m" path="res://Building_Indust/building-n.fbx" id="14_062e5"]
 [ext_resource type="PackedScene" uid="uid://cslxy2uk8v2l3" path="res://Building_Indust/building-k.fbx" id="15_m2rse"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_8cye3"]
+
 [node name="Node3D" type="Node3D" unique_id=417984978]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=66355645]
@@ -72,3 +74,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0265484, 0, -0.798316)
 
 [node name="building-k" parent="building-m" unique_id=174860806 instance=ExtResource("15_m2rse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.620358, 0, -0.38192654)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=56029048]
+transform = Transform3D(447.22647, 0, 0, 0, 1.0000023, 0, 0, 0, 446.54147, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8cye3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D" unique_id=1297550736]
+transform = Transform3D(198.65668, 0, 0, 0, 0.9999992, 0, 0, 0, 197.34842, 0, 0, 0)
