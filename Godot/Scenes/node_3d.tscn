@@ -15,8 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://b25pmqslpomcd" path="res://Building_Indust/building-m.fbx" id="13_8cye3"]
 [ext_resource type="PackedScene" uid="uid://dfmllc01tae6m" path="res://Building_Indust/building-n.fbx" id="14_062e5"]
 [ext_resource type="PackedScene" uid="uid://cslxy2uk8v2l3" path="res://Building_Indust/building-k.fbx" id="15_m2rse"]
+[ext_resource type="PackedScene" uid="uid://co1g8y3plglks" path="res://Scenes/attack.tscn" id="16_062e5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8cye3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cye3"]
 
 [node name="Node3D" type="Node3D" unique_id=417984978]
 
@@ -81,3 +84,7 @@ mesh = SubResource("PlaneMesh_8cye3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D" unique_id=1297550736]
 transform = Transform3D(198.65668, 0, 0, 0, 0.9999992, 0, 0, 0, 197.34842, 0, 0, 0)
+shape = SubResource("BoxShape3D_8cye3")
+
+[node name="Attack" parent="." unique_id=1104190413 instance=ExtResource("16_062e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 616.0317, 338.4714, -704.4364)
