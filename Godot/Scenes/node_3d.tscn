@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b25pmqslpomcd" path="res://Building_Indust/building-m.fbx" id="13_8cye3"]
 [ext_resource type="PackedScene" uid="uid://dfmllc01tae6m" path="res://Building_Indust/building-n.fbx" id="14_062e5"]
 [ext_resource type="PackedScene" uid="uid://cslxy2uk8v2l3" path="res://Building_Indust/building-k.fbx" id="15_m2rse"]
+[ext_resource type="PackedScene" uid="uid://cmdo47v2t1w6t" path="res://Scenes/player.tscn" id="16_062e5"]
 
 [node name="Node3D" type="Node3D" unique_id=417984978]
 
@@ -72,3 +73,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0265484, 0, -0.798316)
 
 [node name="building-k" parent="building-m" unique_id=174860806 instance=ExtResource("15_m2rse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.620358, 0, -0.38192654)
+
+[node name="Player" parent="." unique_id=1180088701 instance=ExtResource("16_062e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97585344, 0.11157274, -0.6210787)
